@@ -1,10 +1,11 @@
 import React from "react";
-// import { useMemo } from "react";
-import { suffixOf, calculateFib } from "./math";
+import { suffixOf, calculateFib } from "../../../utils/math";
 
 function NthFib({ count, increment }) {
-  const fib = calculateFib(count);
-  //   const fib = useMemo(() => calculateFib(count), [count]);
+  const fib = React.useCallback(() => {
+    calculateFib(count);
+  }, [count]);
+
   return (
     <>
       <div className="container">
@@ -20,6 +21,4 @@ function NthFib({ count, increment }) {
   );
 }
 
-export default React.memo(NthFib);
-
-// export default NthFib;
+export default NthFib;

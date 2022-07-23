@@ -1,10 +1,8 @@
 import React from "react";
-// import { useMemo } from "react";
-import { suffixOf, calculatePrime } from "./math";
+import { suffixOf, calculatePrime } from "../../../utils/math";
 
 function NthPrime({ count, increment }) {
-  const prime = calculatePrime(count);
-  //   const prime = useMemo(() => calculatePrime(count), [count]);
+  const prime = React.useCallback(() => calculatePrime(count), [count]);
 
   return (
     <>
@@ -21,6 +19,4 @@ function NthPrime({ count, increment }) {
   );
 }
 
-export default React.memo(NthPrime);
-
-// export default NthPrime;
+export default NthPrime;

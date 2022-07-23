@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
-import NthPrime from "./nthPrime";
-import NthFib from "./nthFib";
-import NthOdd from "./nthOdd";
-import NthEven from "./nthEven";
+import NthPrime from "./components/nthPrime";
+import NthFib from "./components/nthFib";
+import NthOdd from "./components/nthOdd";
+import NthEven from "./components/nthEven";
 
 export default function UseCallBackExample() {
   const [nthEven, setNthEven] = useState(1);
@@ -43,6 +43,7 @@ export default function UseCallBackExample() {
   return (
     <>
       <div className="container mt-4">
+        <h1 className="mb-5 text-center">The useCallback Example</h1>
         <button className="btn btn-primary" onClick={incrementByTen}>
           Add 10
         </button>
