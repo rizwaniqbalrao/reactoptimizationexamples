@@ -1,10 +1,11 @@
 import React from "react";
-// import { useMemo } from "react";
-import { suffixOf, calculateEven } from "./math";
+import { suffixOf, calculateEven } from "../../../utils/math";
 
 function NthEven({ count, increment }) {
-  const even = calculateEven(count);
-  //   const even = useMemo(() => calculateEven(count), [count]);
+  const even = React.useCallback(() => {
+    calculateEven(count);
+  }, [count]);
+
   return (
     <>
       <div className="container">
@@ -20,6 +21,4 @@ function NthEven({ count, increment }) {
   );
 }
 
-export default React.memo(NthEven);
-
-// export default NthEven;
+export default NthEven;

@@ -1,10 +1,9 @@
 import React from "react";
-// import { useMemo } from "react";
-import { suffixOf, calculateOdd } from "./math";
+import { suffixOf, calculateOdd } from "../../../utils/math";
 
 function NthOdd({ count, increment }) {
   const odd = calculateOdd(count);
-  //   const odd = useMemo(() => calculateOdd(count), [count]);
+
   return (
     <>
       <div className="container">
@@ -20,6 +19,4 @@ function NthOdd({ count, increment }) {
   );
 }
 
-export default React.memo(NthOdd);
-
-// export default NthOdd;
+export default NthOdd;

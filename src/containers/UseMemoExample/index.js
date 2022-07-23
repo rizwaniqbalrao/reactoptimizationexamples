@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import NthPrime from "./nthPrime";
-import NthFib from "./nthFib";
-import NthOdd from "./nthOdd";
-import NthEven from "./nthEven";
+import React from "react";
+import NthPrime from "./components/nthPrime";
+import NthFib from "./components/nthFib";
+import NthOdd from "./components/nthOdd";
+import NthEven from "./components/nthEven";
 
-export default function MemoMain() {
-  const [nthEven, setNthEven] = useState(1);
-  const [nthOdd, setNthOdd] = useState(1);
-  const [nthPrime, setNthPrime] = useState(1);
-  const [nthFib, setNthFib] = useState(1);
+export default function UseMemoExample() {
+  const [nthEven, setNthEven] = React.useState(1);
+  const [nthOdd, setNthOdd] = React.useState(1);
+  const [nthPrime, setNthPrime] = React.useState(1);
+  const [nthFib, setNthFib] = React.useState(1);
 
   const reset = () => {
     setNthEven(1);
@@ -43,6 +43,7 @@ export default function MemoMain() {
   return (
     <>
       <div className="container mt-4">
+        <h1 className="mb-5 text-center">The useMemo Example</h1>
         <button className="btn btn-primary" onClick={incrementByTen}>
           Add 10
         </button>
